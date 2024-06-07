@@ -6,7 +6,7 @@ namespace BookStore.Services.AuthorApi.Persistence;
 
 public class AuthorDbContext : DbContext
 {
-    public DbSet<Author> Author => Set<Author>();
+    public DbSet<Author> Authors => Set<Author>();
 
     public AuthorDbContext(
         DbContextOptions<AuthorDbContext> options
