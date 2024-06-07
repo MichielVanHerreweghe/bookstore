@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <ProjectReference Include="..\BookStore.Services.AuthorApi.Domain\BookStore.Services.AuthorApi.Domain.csproj" />
+    <ProjectReference Include="..\BookStore.Services.AuthorApi.Shared\BookStore.Services.AuthorApi.Shared.csproj" />
   </ItemGroup>
 
 </Project>
