@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Services.AuthorApi.Persistence\BookStore.Services.AuthorApi.Persistence.csproj" />
+    <ProjectReference Include="..\BookStore.Services.AuthorApi.Shared\BookStore.Services.AuthorApi.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
