@@ -1,4 +1,6 @@
-﻿using BookStore.Services.Shared.Middleware;
+﻿using BookStore.Services.AuthorApi.Persistence;
+using BookStore.Services.Shared.Middleware;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.Services.AuthorApi.Api.Extensions;
 
@@ -24,6 +26,31 @@ public static class WebApplicationExtensions
 
         app
             .AddAuthMiddleWare();
+
+        using (var scope = app.Services.CreateScope())
+        {
+            AuthorDbContext dbContext = scope
+                .ServiceProvider
+                .GetRequiredService<AuthorDbContext>();
+
+            if (app.Environment.IsDevelopment())
+            {
+                dbContext
+                    .Database
+                    .EnsureDeleted();
+
+                dbContext
+                    .Database
+                    .Migrate();
+
+                Seeder seeder = new(
+                    dbContext
+                );
+
+                seeder
+                    .Seed();
+            }
+        }
 
         return app;
     }

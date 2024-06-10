@@ -18,4 +18,5 @@ WebApplication app = builder
 app
     .AddApplicationMiddleware();
 
-app.Run();
+app
+    .Run();
