@@ -4,12 +4,12 @@ namespace BookStore.Services.BookApi.Domain.Books;
 
 public class Book : Entity
 {
-    public string Title { get; private set; }
-    public string Synopsis { get; private set; }
+    public string Title { get; private set; } = default!;
+    public string Synopsis { get; private set; } = default!;
     public DateTime DateOfFirstPublish { get; private set; }
 
     public int AuthorId { get; private set; }
-    public Author? Author { get; private set; }
+    public Author Author { get; private set; } = default!;
 
     private Book() { }
 
