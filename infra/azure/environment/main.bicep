@@ -89,5 +89,38 @@ module keyVault 'modules/keyVault.bicep' = {
         value: serviceBus.outputs.serviceBusConnectionstring
       }
     ]
+    appConfigurationStoreSystemManagedIdentityId: appConfigurationStore.outputs.appConfigurationStoreSystemManagedIdentityId
+  }
+}
+
+// App Configuration Store
+module appConfigurationStore 'modules/appConfigurationStore.bicep' = {
+  scope: resourceGroup
+  name: '${deploymentId}-appConfigurationStore-deployment'
+  params: {
+    projectName: projectName
+    location: location
+    locationShortName: locationShortName
+    environment: environment
+    deploymentId: deploymentId
+  }
+}
+
+module appConfigurationStoreKeyValues 'modules/appConfigurationStore.bicep' = {
+  scope: resourceGroup
+  name: '${deploymentId}-appConfigurationStore-keyValues-deployment'
+  params: {
+    projectName: projectName
+    location: location
+    locationShortName: locationShortName
+    environment: environment
+    deploymentId: deploymentId
+    keyValues: [
+      {
+        name: 'ConnectionStrings:ServiceBus'
+        value:  '{"uri":"${keyVault.outputs.keyVaultUri}secrets/ConnectionStrings--ServiceBus"}'
+        contentType: 'application/vnd.microsoft.appconfig.keyvaultref+json;charset=utf-8'
+      }
+    ]
   }
 }

@@ -17,6 +17,7 @@ param deploymentId string
 ])
 param keyVaultSku string
 param secrets secret[]
+param appConfigurationStoreSystemManagedIdentityId string
 
 /* Variables */
 var keyVaultName = 'kv-${projectName}-${environment}-${locationShortName}'
@@ -31,5 +32,20 @@ module keyVault 'br/public:avm/res/key-vault/vault:0.6.1' = {
     enablePurgeProtection: environment == 'dev' ? false : true
     enableSoftDelete: environment == 'dev' ? false : true
     secrets: secrets
+    roleAssignments: [
+      {
+        principalId: appConfigurationStoreSystemManagedIdentityId
+        principalType: 'ServicePrincipal'
+        roleDefinitionIdOrName: 'Key Vault Secrets User'
+      }
+      {
+        principalId: appConfigurationStoreSystemManagedIdentityId
+        principalType: 'ServicePrincipal'
+        roleDefinitionIdOrName: 'Key Vault Reader'
+      }
+    ]
   }
 }
+
+/* Outputs */
+output keyVaultUri string = keyVault.outputs.uri
