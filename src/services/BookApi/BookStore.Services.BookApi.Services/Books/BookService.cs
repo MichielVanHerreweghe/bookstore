@@ -43,6 +43,9 @@ public class BookService : IBookService
     {
         IQueryable<Book> query = _dbContext
             .Books
+            .Include(x =>
+                x.Author
+            )
             .AsQueryable();
 
         return await query
@@ -58,6 +61,9 @@ public class BookService : IBookService
     {
         Book? book = await _dbContext
             .Books
+            .Include(x =>
+                x.Author
+            )
             .FirstOrDefaultAsync(x =>
                 x.Id == id,
                 cancellationToken
