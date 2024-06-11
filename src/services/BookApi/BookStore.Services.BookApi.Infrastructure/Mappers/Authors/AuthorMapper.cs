@@ -1,7 +1,7 @@
-﻿using BookStore.Services.AuthorApi.Domain.Authors;
-using BookStore.Services.AuthorApi.Shared.Authors;
+﻿using BookStore.Services.BookApi.Domain.Authors;
+using BookStore.Services.BookApi.Shared.Authors;
 
-namespace BookStore.Services.AuthorApi.Infrastructure.Mappers.Authors;
+namespace BookStore.Services.BookApi.Infrastructure.Mappers.Authors;
 
 public static class AuthorMapper
 {
@@ -10,8 +10,8 @@ public static class AuthorMapper
     )
     {
         Author author = new(
-            model.Name,
-            model.DateOfBirth
+            model.AuthorId,
+            model.Name
         );
 
         return author;
@@ -23,8 +23,8 @@ public static class AuthorMapper
     {
         AuthorDto.Index model = new(
             author.Id,
-            author.Name,
-            author.DateOfBirth
+            author.AuthorId,
+            author.Name
         );
 
         return model;
@@ -36,8 +36,8 @@ public static class AuthorMapper
     {
         AuthorDto.Detail model = new(
             author.Id,
-            author.Name,
-            author.DateOfBirth
+            author.AuthorId,
+            author.Name
         );
 
         return model;
