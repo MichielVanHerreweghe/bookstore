@@ -1,1 +1,0 @@
-﻿global using BookStore.Services.Shared.Persistence;
