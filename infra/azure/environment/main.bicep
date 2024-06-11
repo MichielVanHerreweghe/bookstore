@@ -17,6 +17,7 @@ param locationShortName string
 ])
 param environment string
 param deploymentId string = take(newGuid(), 8)
+param daprPrincipalId string
 
 // Service Bus parameters
 @allowed([
@@ -82,6 +83,7 @@ module keyVault 'modules/keyVault.bicep' = {
     locationShortName: locationShortName
     environment: environment
     deploymentId: deploymentId
+    daprPrincipalId: daprPrincipalId
     keyVaultSku: keyVaultSku
     secrets: [
       {
