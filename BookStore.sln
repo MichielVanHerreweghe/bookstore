@@ -25,13 +25,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services.AuthorAp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BookApi", "BookApi", "{F8D93FE6-0343-4F00-B92D-BFABB8578BD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services.BookApi.Domain", "src\services\BookApi\BookStore.Services.BookApi.Domain\BookStore.Services.BookApi.Domain.csproj", "{6AB4DDF1-08CD-44BB-881C-B582C3A466D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services.BookApi.Domain", "src\services\BookApi\BookStore.Services.BookApi.Domain\BookStore.Services.BookApi.Domain.csproj", "{6AB4DDF1-08CD-44BB-881C-B582C3A466D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services.BookApi.Persistence", "src\services\BookApi\BookStore.Services.BookApi.Persistence\BookStore.Services.BookApi.Persistence.csproj", "{53E53500-B778-406E-8FBC-349A7D7EC774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services.BookApi.Persistence", "src\services\BookApi\BookStore.Services.BookApi.Persistence\BookStore.Services.BookApi.Persistence.csproj", "{53E53500-B778-406E-8FBC-349A7D7EC774}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services.BookApi.Services", "src\services\BookApi\BookStore.Services.BookApi.Services\BookStore.Services.BookApi.Services.csproj", "{0A31AFE8-02F1-409B-8AB8-679F9CC16DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services.BookApi.Services", "src\services\BookApi\BookStore.Services.BookApi.Services\BookStore.Services.BookApi.Services.csproj", "{0A31AFE8-02F1-409B-8AB8-679F9CC16DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services.BookApi.Shared", "src\services\BookApi\BookStore.Services.BookApi.Shared\BookStore.Services.BookApi.Shared.csproj", "{28FC0186-5BBA-4F02-A81B-EED84682C5A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookStore.Services.BookApi.Shared", "src\services\BookApi\BookStore.Services.BookApi.Shared\BookStore.Services.BookApi.Shared.csproj", "{28FC0186-5BBA-4F02-A81B-EED84682C5A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Services.BookApi.Infrastructure", "src\services\BookApi\BookStore.Services.BookApi.Infrastructure\BookStore.Services.BookApi.Infrastructure.csproj", "{54DA6136-E90C-4130-9459-2C49D3BE33B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{28FC0186-5BBA-4F02-A81B-EED84682C5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28FC0186-5BBA-4F02-A81B-EED84682C5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28FC0186-5BBA-4F02-A81B-EED84682C5A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DA6136-E90C-4130-9459-2C49D3BE33B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DA6136-E90C-4130-9459-2C49D3BE33B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DA6136-E90C-4130-9459-2C49D3BE33B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DA6136-E90C-4130-9459-2C49D3BE33B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{53E53500-B778-406E-8FBC-349A7D7EC774} = {F8D93FE6-0343-4F00-B92D-BFABB8578BD7}
 		{0A31AFE8-02F1-409B-8AB8-679F9CC16DDF} = {F8D93FE6-0343-4F00-B92D-BFABB8578BD7}
 		{28FC0186-5BBA-4F02-A81B-EED84682C5A2} = {F8D93FE6-0343-4F00-B92D-BFABB8578BD7}
+		{54DA6136-E90C-4130-9459-2C49D3BE33B7} = {F8D93FE6-0343-4F00-B92D-BFABB8578BD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {37435113-F36F-41AF-ACFE-70A9BC00D12D}
