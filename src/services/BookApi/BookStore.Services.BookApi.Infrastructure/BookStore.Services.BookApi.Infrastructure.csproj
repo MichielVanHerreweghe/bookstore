@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookStore.Services.BookApi.Domain\BookStore.Services.BookApi.Domain.csproj" />
+    <ProjectReference Include="..\BookStore.Services.BookApi.Shared\BookStore.Services.BookApi.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
