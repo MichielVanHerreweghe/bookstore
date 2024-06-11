@@ -6,9 +6,7 @@ public class Seeder
 {
     private readonly AuthorDbContext _dbContext;
 
-    public Seeder(
-        AuthorDbContext dbContext
-    )
+    public Seeder(AuthorDbContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -24,19 +22,11 @@ public class Seeder
         {
             new Author(
                 "Brandon Sanderson",
-                new DateTime(
-                    1975, 
-                    12, 
-                    19
-                )
+                new DateTime(1975, 12, 19)
             ),
             new Author(
                 "Frank Herbert",
-                new DateTime(
-                    1920, 
-                    10, 
-                    8
-                )
+                new DateTime(1920, 10, 8)
             )
         };
 
