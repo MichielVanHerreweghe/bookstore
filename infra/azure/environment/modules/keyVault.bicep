@@ -9,6 +9,7 @@ param location string
 param locationShortName string
 param environment string
 param deploymentId string
+param daprPrincipalId string
 
 // Key Vault parameters
 @allowed([
@@ -42,6 +43,11 @@ module keyVault 'br/public:avm/res/key-vault/vault:0.6.1' = {
         principalId: appConfigurationStoreSystemManagedIdentityId
         principalType: 'ServicePrincipal'
         roleDefinitionIdOrName: 'Key Vault Reader'
+      }
+      {
+        principalId: daprPrincipalId
+        principalType: 'ServicePrincipal'
+        roleDefinitionIdOrName: 'Key Vault Secrets User'
       }
     ]
   }
