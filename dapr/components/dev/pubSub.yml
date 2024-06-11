@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1
+kind: Component
+metadata:
+  name: azureServiceBus
+spec:
+  type: pubsub.azure.servicebus
+  version: v1
+  metadata:
+    - name: connectionString
+      secretKeyRef:
+        name: ConnectionStrings--ServiceBus
+        key: ConnectionStrings--ServiceBus
+    - name: consumerID
+      value: 'book-api'
+auth:
+  secretStore: azureSecretStore

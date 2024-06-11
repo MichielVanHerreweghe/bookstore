@@ -22,6 +22,9 @@ public static class IServiceCollectionExtensions
             .AddSwaggerServices();
 
         services
+            .AddDaprClient();
+
+        services
             .AddRestServices();
 
         services

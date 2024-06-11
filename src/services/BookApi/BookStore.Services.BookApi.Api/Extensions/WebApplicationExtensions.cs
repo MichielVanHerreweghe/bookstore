@@ -18,14 +18,20 @@ public static class WebApplicationExtensions
             .UseHttpsRedirection();
 
         app
+            .AddAuthMiddleWare();
+
+        app
 
             .MapControllers();
 
         app
-            .AddCustomMiddleware();
+            .UseCloudEvents();
 
         app
-            .AddAuthMiddleWare();
+            .MapSubscribeHandler();
+
+        app
+            .AddCustomMiddleware();
 
         using (var scope = app.Services.CreateScope())
         {
