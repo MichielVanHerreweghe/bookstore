@@ -3,7 +3,6 @@ on:
         types: [opened, synchronize, reopened]
         paths: 
             - 'infra/azure/*'
-    workflow_dispatch:
 
 name: Azure IaC CI
 
