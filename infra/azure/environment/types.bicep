@@ -19,6 +19,15 @@ type secret = {
  value: string
 }
 
+// App Configuration Store Types
+@export()
+type keyValue = {
+  name: string
+  label: string?
+  value: string
+  contentType: string?
+}
+
 // Role Assignment Types
 @export()
 type roleAssignment = {
