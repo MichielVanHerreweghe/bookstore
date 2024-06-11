@@ -4,12 +4,12 @@ using BookStore.Services.BookApi.Shared.Authors;
 using BookStore.Services.BookApi.Shared.Books;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BookStore.Services.AuthorApi.Services;
+namespace BookStore.Services.BookApi.Services;
 
 public static class IServiceCollectionExtensions
 {
     public static IServiceCollection AddRestServices(
-        this IServiceCollection services    
+        this IServiceCollection services
     )
     {
         services

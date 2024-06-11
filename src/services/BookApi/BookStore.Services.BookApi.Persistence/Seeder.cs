@@ -17,6 +17,7 @@ public class Seeder
     public void Seed()
     {
         SeedAuthors();
+        SeedBooks();
     }
 
     private void SeedAuthors()
@@ -66,5 +67,12 @@ public class Seeder
                 2
             )
         };
+
+        _dbContext
+            .Books
+            .AddRange(books);
+
+        _dbContext
+            .SaveChanges();
     }
 }
