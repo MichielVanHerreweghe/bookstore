@@ -59,7 +59,7 @@ public class AuthorService : IAuthorService
         Author? author = await _dbContext
             .Authors
             .FirstOrDefaultAsync(x =>
-                x.Id == id,
+                x.AuthorId == id,
                 cancellationToken
             );
 

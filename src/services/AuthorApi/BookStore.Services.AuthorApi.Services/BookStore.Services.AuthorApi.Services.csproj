@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapr.Client" Version="1.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BookApi\BookStore.Services.BookApi.Infrastructure\BookStore.Services.BookApi.Infrastructure.csproj" />
     <ProjectReference Include="..\BookStore.Services.AuthorApi.Persistence\BookStore.Services.AuthorApi.Persistence.csproj" />
     <ProjectReference Include="..\BookStore.Services.AuthorApi.Shared\BookStore.Services.AuthorApi.Shared.csproj" />
   </ItemGroup>

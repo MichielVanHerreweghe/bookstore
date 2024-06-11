@@ -25,6 +25,9 @@ public static class IServiceCollectionExtensions
             .AddRestServices();
 
         services
+            .AddDaprClient();
+
+        services
             .AddDbServices(
                 configuration
             );
