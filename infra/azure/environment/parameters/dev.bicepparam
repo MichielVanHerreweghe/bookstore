@@ -20,3 +20,6 @@ param serviceBusTopics = [
     ]
   }
 ]
+
+// Key Vault
+param keyVaultSku = 'standard'

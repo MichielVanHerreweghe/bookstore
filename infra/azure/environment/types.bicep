@@ -11,6 +11,15 @@ type subscription = {
   name: string
 }
 
+// Key Vault Types
+@export()
+@secure()
+type secret = {
+  name: string
+ value: string
+}
+
+// Role Assignment Types
 @export()
 type roleAssignment = {
   name: string

@@ -30,3 +30,4 @@ resource serviceBus 'Microsoft.ServiceBus/namespaces@2022-10-01-preview' = {
 
 /* Outputs */
 output serviceBusNamespace string = serviceBus.name
+output serviceBusConnectionstring string = listKeys('${serviceBus.id}/AuthorizationRules/RootManageSharedAccessKey', serviceBus.apiVersion).primaryConnectionString
