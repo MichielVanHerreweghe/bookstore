@@ -5,7 +5,9 @@ namespace BookStore.Services.AuthorApi.Infrastructure.Mappers.Authors;
 
 public static class AuthorMapper
 {
-    public static Author ToAuthor(this AuthorDto.Mutate model)
+    public static Author ToAuthor(
+        this AuthorDto.Mutate model
+    )
     {
         Author author = new(
             model.Name,
@@ -15,7 +17,9 @@ public static class AuthorMapper
         return author;
     }
 
-    public static AuthorDto.Index ToIndexDto(this Author author)
+    public static AuthorDto.Index ToIndexDto(
+        this Author author
+    )
     {
         AuthorDto.Index model = new(
             author.Id,
@@ -26,7 +30,9 @@ public static class AuthorMapper
         return model;
     }
 
-    public static AuthorDto.Detail ToDetailDto (this Author author)
+    public static AuthorDto.Detail ToDetailDto(
+        this Author author
+    )
     {
         AuthorDto.Detail model = new(
             author.Id,
