@@ -1,9 +1,8 @@
 on:
     pull_request:
-        types: [opened, synchronize, reopened]
+        types: [opened, synchronize, reopened, ready_for_review]
         paths: 
-            - 'infra/azure/*'
-    workflow_dispatch:
+            - 'infra/azure/**'
 
 name: Azure IaC CI
 
