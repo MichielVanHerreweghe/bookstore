@@ -29,6 +29,13 @@ param serviceBusSkuName string
 // Service Bus Topic parameters
 param serviceBusTopics topic[]
 
+// Key Vault parameters
+@allowed([
+  'standard'
+  'premium'
+])
+param keyVaultSku string
+
 /* Variables */
 var resourceGroupName = 'rg-${projectName}-${environment}-${locationShortName}'
 
@@ -64,3 +71,23 @@ module serviceBusTopicResources 'modules/serviceBusTopic.bicep' = [for topic in 
     }
   }
 ]
+
+// Key Vault
+module keyVault 'modules/keyVault.bicep' = {
+  scope: resourceGroup
+  name: '${deploymentId}-keyVault-deployment'
+  params: {
+    projectName: projectName
+    location: location
+    locationShortName: locationShortName
+    environment: environment
+    deploymentId: deploymentId
+    keyVaultSku: keyVaultSku
+    secrets: [
+      {
+        name: 'ConnectionStrings--ServiceBus'
+        value: serviceBus.outputs.serviceBusConnectionstring
+      }
+    ]
+  }
+}
