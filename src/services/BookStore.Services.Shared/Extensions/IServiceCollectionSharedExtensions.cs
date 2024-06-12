@@ -22,7 +22,8 @@ public static class IServiceCollectionSharedExtensions
                     options.CustomSchemaIds(type =>
                         type.DeclaringType is null
                         ? $"{type.Name}"
-                        : $"{type.DeclaringType?.Name}.{type.Name}");
+                        : $"{type.DeclaringType?.Name}.{type.Name}"
+                    );
                 }
             )
             .AddFluentValidationRulesToSwagger();
