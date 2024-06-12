@@ -1,6 +1,6 @@
 ﻿using BookStore.Services.BookApi.Persistence;
-using BookStore.Services.Shared.Middleware;
 using Microsoft.EntityFrameworkCore;
+using BookStore.Services.Shared.Extensions;
 
 namespace BookStore.Services.BookApi.Api.Extensions;
 
@@ -57,39 +57,6 @@ public static class WebApplicationExtensions
                     .Seed();
             }
         }
-
-        return app;
-    }
-
-    private static WebApplication AddDevelopmentMiddleWare(
-        this WebApplication app
-    )
-    {
-        app
-            .UseSwagger();
-
-        app
-            .UseSwaggerUI();
-
-        return app;
-    }
-
-    private static WebApplication AddCustomMiddleware(
-        this WebApplication app
-    )
-    {
-        app
-            .UseMiddleware<ExceptionMiddleware>();
-
-        return app;
-    }
-
-    private static WebApplication AddAuthMiddleWare(
-        this WebApplication app
-    )
-    {
-        app
-            .UseAuthorization();
 
         return app;
     }
