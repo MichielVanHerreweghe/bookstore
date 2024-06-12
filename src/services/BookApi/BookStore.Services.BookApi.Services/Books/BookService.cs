@@ -94,6 +94,7 @@ public class BookService : IBookService
                 model.Title,
                 model.Synopsis,
                 model.DateOfFirstPublish,
+                model.CoverUrl,
                 model.AuthorId
             );
 
