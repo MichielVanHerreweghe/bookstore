@@ -1,0 +1,15 @@
+apiVersion: dapr.io/v1
+kind: Component
+metadata:
+  name: redisStateStore
+spec:
+  type: state.azure.cosmosdb
+  metadata:
+  - name: url
+    value: ""
+  - name: masterKey
+    value: ""
+  - name: database
+    value: "basket"
+  - name: collection
+    value: "basket"
