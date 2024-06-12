@@ -1,0 +1,19 @@
+on:
+    pull_request:
+        types: [opened, synchronize, reopened, ready_for_review]
+        paths: 
+            - 'src/**'
+
+name: Project Code CI
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+    build-project-code:
+        name: Build Project Code
+        uses: ./.github/workflows/shared.build-dotnet.yml
+        with:
+            DOTNET_VERSIONS: '8.0.x'
+            OS: 'ubuntu-latest,windows-latest'
