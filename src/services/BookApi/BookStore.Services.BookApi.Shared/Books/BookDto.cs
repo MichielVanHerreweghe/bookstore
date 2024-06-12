@@ -15,6 +15,7 @@ public abstract class BookDto
         string Title,
         string Synopsis,
         DateTime DateOfFirstPublish,
+        string CoverUrl,
         AuthorDto.Detail Author
     );
 
@@ -22,6 +23,7 @@ public abstract class BookDto
         string Title,
         string Synopsis,
         DateTime DateOfFirstPublish,
+        string CoverUrl,
         int AuthorId
     )
     {
@@ -39,6 +41,9 @@ public abstract class BookDto
 
                 RuleFor(x => x.DateOfFirstPublish)
                     .NotNull();
+
+                RuleFor(x => x.CoverUrl)
+                    .NotEmpty();
 
                 RuleFor(x => x.AuthorId)
                     .NotNull()
