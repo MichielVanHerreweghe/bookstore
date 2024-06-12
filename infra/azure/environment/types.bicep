@@ -1,4 +1,3 @@
-
 // Service Bus Topic Types
 @export()
 type topic = {
