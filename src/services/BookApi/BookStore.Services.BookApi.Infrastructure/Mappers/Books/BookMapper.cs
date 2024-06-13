@@ -14,6 +14,7 @@ public static class BookMapper
             model.Title,
             model.Synopsis,
             model.DateOfFirstPublish,
+            model.CoverUrl,
             model.AuthorId
         );
 
@@ -42,6 +43,7 @@ public static class BookMapper
             book.Title,
             book.Synopsis,
             book.DateOfFirstPublish,
+            book.CoverUrl,
             book.Author.ToDetailDto()
         );
 

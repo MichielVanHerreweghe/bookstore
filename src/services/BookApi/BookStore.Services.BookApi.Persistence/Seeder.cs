@@ -54,6 +54,7 @@ public class Seeder
                     7,
                     17
                 ),
+                "https://m.media-amazon.com/images/I/51G0zeHL2FL._AC_SY780_.jpg",
                 1
             ),
             new Book(
@@ -64,6 +65,7 @@ public class Seeder
                     11,
                     6
                 ),
+                "https://m.media-amazon.com/images/I/81UalU6lAoL._AC_UF1000,1000_QL80_.jpg",
                 1
             ),
             new Book(
@@ -74,6 +76,7 @@ public class Seeder
                     7,
                     17
                 ),
+                "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1555447414i/44767458.jpg",
                 2
             )
         };

@@ -7,6 +7,7 @@ public class Book : Entity
     public string Title { get; private set; } = default!;
     public string Synopsis { get; private set; } = default!;
     public DateTime DateOfFirstPublish { get; private set; }
+    public string CoverUrl { get; private set; } = default!;
 
     public int AuthorId { get; private set; }
     public Author Author { get; private set; } = default!;
@@ -17,6 +18,7 @@ public class Book : Entity
         string title,
         string synopsis,
         DateTime dateOfFirstPublish,
+        string coverUrl,
         int authorId
     )
     {
@@ -41,6 +43,13 @@ public class Book : Entity
                 nameof(dateOfFirstPublish)
             );
 
+        CoverUrl = Guard
+            .Against
+            .NullOrWhiteSpace(
+                coverUrl,
+                nameof(coverUrl)
+            );
+
         AuthorId = Guard
             .Against
             .NegativeOrZero(
@@ -53,6 +62,7 @@ public class Book : Entity
         string title,
         string synopsis,
         DateTime dateOfFirstPublish,
+        string coverUrl,
         int authorId
     )
     {
@@ -66,6 +76,10 @@ public class Book : Entity
 
         UpdateDateOfFirstPublish(
             dateOfFirstPublish
+        );
+
+        UpdateCoverUrl(
+            coverUrl
         );
 
         UpdateAuthorId(
@@ -106,6 +120,18 @@ public class Book : Entity
             .Null(
                 dateOfFirstPublish,
                 nameof(dateOfFirstPublish)
+            );
+    }
+
+    private void UpdateCoverUrl(
+        string coverUrl    
+    )
+    {
+        CoverUrl = Guard
+            .Against
+            .NullOrWhiteSpace(
+                coverUrl,
+                nameof(coverUrl)
             );
     }
 
